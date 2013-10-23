@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131023055630) do
+ActiveRecord::Schema.define(:version => 20131023165936) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -46,12 +46,57 @@ ActiveRecord::Schema.define(:version => 20131023055630) do
   add_index "admin_users", ["email"], :name => "index_admin_users_on_email", :unique => true
   add_index "admin_users", ["reset_password_token"], :name => "index_admin_users_on_reset_password_token", :unique => true
 
+  create_table "answers", :force => true do |t|
+    t.string   "text_answer", :default => "",    :null => false
+    t.boolean  "is_correct",  :default => false, :null => false
+    t.integer  "question_id"
+    t.datetime "created_at",                     :null => false
+    t.datetime "updated_at",                     :null => false
+  end
+
+  add_index "answers", ["question_id"], :name => "index_answers_on_question_id"
+
   create_table "index_pages", :force => true do |t|
     t.string   "title",         :default => "", :null => false
     t.integer  "admin_user_id"
     t.text     "description1"
     t.text     "description2"
     t.text     "description3"
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
+  end
+
+  create_table "questions", :force => true do |t|
+    t.string   "text_question", :default => "", :null => false
+    t.integer  "quiz_id"
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
+  end
+
+  add_index "questions", ["quiz_id"], :name => "index_questions_on_quiz_id"
+
+  create_table "quizzes", :force => true do |t|
+    t.string   "name",       :default => "", :null => false
+    t.integer  "topic_id"
+    t.datetime "created_at",                 :null => false
+    t.datetime "updated_at",                 :null => false
+  end
+
+  add_index "quizzes", ["topic_id"], :name => "index_quizzes_on_topic_id"
+
+  create_table "topics", :force => true do |t|
+    t.string   "title",      :default => "", :null => false
+    t.text     "content"
+    t.integer  "unit_id"
+    t.datetime "created_at",                 :null => false
+    t.datetime "updated_at",                 :null => false
+  end
+
+  add_index "topics", ["unit_id"], :name => "index_topics_on_unit_id"
+
+  create_table "units", :force => true do |t|
+    t.string   "title",      :default => "",    :null => false
+    t.boolean  "aproved",    :default => false, :null => false
     t.datetime "created_at",                    :null => false
     t.datetime "updated_at",                    :null => false
   end

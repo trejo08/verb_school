@@ -2,6 +2,9 @@ VerbSchool::Application.routes.draw do
   
 
   get "main/index"
+  get 'main/topics' => 'main#topics', as: :topics
+
+  # resources :main
 
   root to: 'main#index'
 
