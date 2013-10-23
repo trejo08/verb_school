@@ -1,19 +1,27 @@
 <%= semantic_form_for [:admin, @quiz] do |f| %>
-	<%= f.inputs "About Page Details" do %>
-		<%#= f.input :title %>
-		<%#= f.input :subtitle %>
-		<%#= f.input :description_1 %>
-		<%#= f.input :description_2 %>
+	<%= f.inputs "Quis Details" do %>
+		<%= f.input :name %>
+		<%= f.input :topic %>
 	<% end %>
-	<%#= f.inputs "Images" do %>
-		<%#= images_id(@about_page) %>
-		<%# %w(1 2 3).each do |item| %>
-			<li class="string input optional stringish" id="about_page_title_input">
-				<label class=" label" for="about_page_title"></label>
-				<%#= image_cropper(@about_page, { image_name: "tmp1_slide#{item}", ratio: :base, label_title: "Image for slide #{item}"}) %>
-			</li>
-		<%# end %>
-	<%# end if @about_page.admin_user.theme_id == 1 %>
+
+	<!-- Start Nested Models -->
+	<fieldset class="inputs">
+		<legend>
+			<span>Questions for this Quiz</span>
+		</legend>
+		<ol>
+			<div class="has_many week_day_meals">
+				<h3>Questions</h3>
+				<%= f.fields_for :questions do |builder| %>
+					<%= render "questions_fields", f: builder %>
+				<% end %>
+				<%= link_to_add_fields "Add New Shipping Option", f, :questions %>
+			</div>
+		</ol>
+	</fieldset>
+	<!-- Start Nested Models -->
+
+
 	<%= f.actions do %>
 	  	<%= f.action :submit %>
 	  	<%= f.action :cancel, wrapper_html: {class: "cancel"} %>

@@ -1,0 +1,21 @@
+<ol>
+	<div class="has_many">
+		<li class="input">
+			<fieldset class="inputs  has_many_fields">
+				<ol>
+					<li class="select input optional">
+						<%#= f.label :text_question, :class => " label" %>
+						<%= f.input :text_question %></br></br>
+
+						<%#= f.label :shipping_option_id, :class => " label", :value => "Shipping Option" %>
+						<%#= f.collection_select :shipping_option_id, @shipping_option, :id, :name, {} %>
+
+	 					<%#= f.input :shipping_price %>
+					</li>
+					<%= f.hidden_field :_destroy, :class =>  "remove" %>
+					<%= link_to "Remove", '#', class: "remove_fields button" %>
+				</ol>
+			</fieldset>
+		</li>
+	</div>
+</ol>
