@@ -5,8 +5,8 @@ $(function(){
 	$("form").on("click",".add_fields",function(event){		
 		event.preventDefault();
 		time = new Date().getTime();
-	  regexp = new RegExp($(this).data('id'), 'g');
-	  $(this).before($(this).data('fields').replace(regexp, time));  
+		regexp = new RegExp($(this).data('id'), 'g');
+		$(this).before($(this).data('fields').replace(regexp, time));  
 	});
 	       
 
