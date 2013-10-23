@@ -6,6 +6,7 @@ gem 'rails', '3.2.13'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'mysql2'
+gem 'passenger'
 
 
 # Gems used only for assets and not required
@@ -18,9 +19,15 @@ group :assets do
   # gem 'therubyracer', :platforms => :ruby
 
   gem 'uglifier', '>= 1.0.3'
+
+  gem 'bootstrap-sass'
 end
 
-gem 'jquery-rails'
+gem 'jquery-rails', "< 3.0.0"
+gem 'activeadmin'#, github: "gregbell/active_admin"
+#gem 'sass-rails'
+gem "meta_search",    '>= 1.1.0.pre'
+gem 'crimagify', :git => 'git://github.com/trejo08/Crimagify.git'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
