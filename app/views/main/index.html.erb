@@ -3,8 +3,13 @@
 
 <table>
 	<tr>
-		
-			<%= @index_page.title %>
-		
+		<%= @index_page.title rescue "aqui va el titulo" %>
+		<hr>
+		<%= @index_page.description1 rescue "aqui va el titulo" %>
+		<hr>
+		<%= @index_page.description2 rescue "aqui va el titulo" %>
+		<hr>
 	</tr>
 </table>
+
+
