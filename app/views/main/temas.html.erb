@@ -11,5 +11,10 @@
 			<strong>Tema</strong>
 		</dt>
 		<dd><%= tema.title %></dd>
+		<dt>
+			<strong>Estudiar tema</strong>
+		</dt>
+		<dd><%= link_to 'seguir', tema_path(tema) %></dd>
+		<hr>
 	<% end %>
 </dl>
