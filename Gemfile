@@ -44,5 +44,7 @@ gem 'crimagify', :git => 'git://github.com/trejo08/Crimagify.git'
 # To use debugger
 # gem 'debugger'
 
+gem 'passenger'
+
 
 # gem 'will_paginate'
