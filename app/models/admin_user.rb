@@ -16,6 +16,7 @@ class AdminUser < ActiveRecord::Base
   end
 
   def index_page
+    puts index_pages.inspect
     index_pages.first
   end
 end

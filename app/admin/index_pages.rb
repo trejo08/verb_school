@@ -3,6 +3,8 @@ ActiveAdmin.register IndexPage do
 	actions :edit, :update, :show
 	config.filters = false
 
+	menu :parent => "Admin Paginas"
+
 	action_item only:[:edit] do |resource|
 		link_to "Show Appointment Page", admin_index_page_path(current_admin_user.index_page.id)
 	end
@@ -23,7 +25,7 @@ ActiveAdmin.register IndexPage do
 
 	controller do
 		def index
-			redirect_to edit_admin_index_page_path(current_admin_user.index_page.id)
+			redirect_to edit_admin_index_page_path(current_admin_user.index_page.id) rescue redirect_to admin_root_path
 		end
 
 		def show
