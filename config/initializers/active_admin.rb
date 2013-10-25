@@ -207,7 +207,7 @@ ActiveAdmin.setup do |config|
   # config.filters = true
 
   module ActiveAdmin::ViewHelpers
-    include Crimagify::ApplicationHelper
+    # include Crimagify::ApplicationHelper
   end
 
 
