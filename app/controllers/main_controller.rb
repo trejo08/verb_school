@@ -12,6 +12,6 @@ class MainController < ApplicationController
   end
 
   def tema
-  	@tema = Topic.find(params[:id])
+  	@tema = Topic.find(params[:id]) rescue Topic.first
   end
 end
