@@ -27,7 +27,7 @@ gem 'jquery-rails', "< 3.0.0"
 gem 'activeadmin'#, github: "gregbell/active_admin"
 #gem 'sass-rails'
 gem "meta_search",    '>= 1.1.0.pre'
-gem 'crimagify', :git => 'git://github.com/trejo08/Crimagify.git'
+#gem 'crimagify', :git => 'git://github.com/trejo08/Crimagify.git'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
