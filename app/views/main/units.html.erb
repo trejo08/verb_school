@@ -1,0 +1,16 @@
+
+<h1><strong>En esta seccion veremos la lista de unidades que estaran disponibles para ser estudiadas</strong></h1> <br>
+<center>
+<table>
+	<tr>
+		<th>
+			Unidad
+		</th>
+	</tr>
+	<% @units.each do |unit| %>
+		<tr>
+			<td><%= unit.title rescue '' %></td>
+		</tr>
+	<% end %>
+</table>
+</center>

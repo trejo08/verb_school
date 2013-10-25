@@ -2,7 +2,9 @@ VerbSchool::Application.routes.draw do
   
 
   get "main/index"
-  get 'main/topics' => 'main#topics', as: :topics
+  match 'main/topics' => 'main#topics', as: :topics
+  match 'main/units' => 'main#units', as: :unidades
+  match 'main/temas' => 'main#temas', as: :temas
 
   # resources :main
 
