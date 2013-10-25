@@ -1,5 +1,5 @@
 ActiveAdmin.register Quiz do
   form do |f|
-		render 'form'
-	end
+  	render 'form'
+  end
 end

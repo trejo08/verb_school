@@ -15,7 +15,7 @@
 				<%= f.fields_for :questions do |builder| %>
 					<%= render "questions_fields", f: builder %>
 				<% end %>
-				<%= link_to_add_fields "Add New Shipping Option", f, :questions %>
+				<%= link_to_add_fields "Add New Question", f, :questions %>
 			</div>
 		</ol>
 	</fieldset>

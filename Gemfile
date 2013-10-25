@@ -45,4 +45,4 @@ gem 'crimagify', :git => 'git://github.com/trejo08/Crimagify.git'
 # gem 'debugger'
 
 
-gem 'will_paginate'
+# gem 'will_paginate'

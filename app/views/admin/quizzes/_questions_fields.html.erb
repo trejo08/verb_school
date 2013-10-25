@@ -1,15 +1,23 @@
-<!-- <ol>
-	<div class="has_many">
-		<li class="input"> -->
-			<fieldset class="inputs  has_many_fields">
-				<ol>
-					<li class="select input optional">
-						<%= f.input :text_question %><!-- </br></br> -->
-					</li>
-					<%= f.hidden_field :_destroy, :class =>  "remove" %>
-					<%= link_to "Remove", '#', class: "remove_fields button" %>
-				</ol>
-			</fieldset>
-		<!-- </li>
-	</div>
-</ol> -->
+<fieldset class="inputs  has_many_fields">
+	<ol>
+		<li class="select input optional">
+			<%= f.input :text_question %>
+		</li>
+		<fieldset class="inputs">
+			<legend>
+				<span>Answers for this Question</span>
+			</legend>
+			<ol>
+				<div class="has_many week_day_meals">
+					<h3>Answers</h3>
+					<%= f.fields_for :answers do |builder| %>
+						<%= render "answer_fields", f: builder %>
+					<% end %>
+					<%= link_to_add_fields "Add New Answer Option", f, :answers %>
+				</div>
+			</ol>
+		</fieldset>
+		<%= f.hidden_field :_destroy, :class =>  "remove" %>
+		<%= link_to "Remove", '#', class: "remove_fields button" %>
+	</ol>
+</fieldset>
