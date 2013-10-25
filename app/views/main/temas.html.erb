@@ -1,0 +1,15 @@
+<div class="page-header">
+	<h1>Estos son los temas que  de todas las unidades de estudio</h1>
+</div>
+<dl class="dl-horizontal">
+	<% @temas.each do |tema|%>
+		<dt>
+			<strong>Unidad</strong>
+		</dt>
+		<dd><%= tema.unit.title %></dd>
+		<dt>
+			<strong>Tema</strong>
+		</dt>
+		<dd><%= tema.title %></dd>
+	<% end %>
+</dl>
