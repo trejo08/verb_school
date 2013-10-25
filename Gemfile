@@ -6,7 +6,7 @@ gem 'rails', '3.2.13'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'mysql2'
-gem 'passenger'
+gem 'passenger', '3.0.18'
 
 
 # Gems used only for assets and not required
@@ -43,8 +43,6 @@ gem "meta_search",    '>= 1.1.0.pre'
 
 # To use debugger
 # gem 'debugger'
-
-gem 'passenger'
 
 
 # gem 'will_paginate'
