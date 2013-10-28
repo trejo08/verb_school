@@ -1,37 +1,102 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width">
 	<title>VerbSchool</title>
-    <!-- <title><%#= content_for?(:title) ? yield(:title) : "Rails Bootstrap" %></title>
-    <meta name="description" content="<%#= content_for?(:description) ? yield(:description) : "Rails Bootstrap" %>"> -->
-    <%= stylesheet_link_tag    "application", :media => "all" %>
-    <%= javascript_include_tag "application" %>
+
+    <%= stylesheet_link_tag "template/bootstrap", :media => "all" %>
+    <%= stylesheet_link_tag "template/glyphicons", :media => "all" %>
+    <%= stylesheet_link_tag "template/layerslider", :media => "all" %>
+    <%= stylesheet_link_tag "template/styles-blue", :media => "all" %>
+    <%= stylesheet_link_tag 'http://fonts.googleapis.com/css?family=Open+Sans:400,700,600'%>
+
+    <%= javascript_include_tag "template/jquery-1.9.1.min" %>
+    <%= javascript_include_tag "template/jquery-easing-1.3" %>
+    <%= javascript_include_tag "template/jquery-transit-modified" %>
+    <%= javascript_include_tag "template/layerslider.transitions" %>
+    <%= javascript_include_tag "template/layerslider.kreaturamedia.jquery" %>
+    <%= javascript_include_tag "template/jquery-easing-1.3" %>
+    <%= javascript_include_tag "template/grove-slider" %>
     <%= csrf_meta_tags %>
 </head>
 <body>
-	<header class="navbar navbar-fixed-top">
-		<nav class="navbar-inner">
-			<div class="container">
-				<%= render 'navigation' %>
-			</div>
-		</nav>
-	</header>
-	<main role="main">
+
+  <header>
+    <nav class="navbar navbar-default grove-navbar" role="navigation">
       <div class="container">
-        <div class="content">
-           <div class="row">
-            <div class="span12">
-              <%#= render 'messages' %>
-              <%= yield %>
-            </div>
-          </div>
-          <footer>
-          </footer>
+        <div class="navbar-header">
+          <a href="#" class="grove-toggle" data-toggle="collapse" data-target=".grove-nav">
+            <i class="glyphicons show_lines"><i></i></i>  
+          </a>
+          <%= link_to root_path, class: "navbar-brand" do %>
+            <%= image_tag "logo.png", alt: "Grove" %>
+          <% end %>
         </div>
+
+        <div class="collapse navbar-collapse grove-nav">
+          <ul class="nav navbar-nav">
+            <li class="active">
+              <%= link_to "INICIO", root_path %>
+            </li>
+            <li>
+              <%= link_to "UNIDADES", unidades_path %>
+            </li>
+            <li>
+              <%= link_to "TEMAS", temas_path %>
+            </li>
+            <li>
+              <%= link_to "EXAMENES", "javascript:void(0);" %>
+            </li>
+          </ul>        
+        </div><!-- /.navbar-collapse -->
       </div>
-    </main>
-    <%#= yield %>
+    </nav>
+  </header>
+
+    <%= yield %>
+
+  <footer class="widewrapper footer">
+    <div class="container">
+      <div class="row footer">
+        <div class="col-sm-3">
+          <h4>About Grove</h4>
+          <p>Adalah menjadi satu fakta bahawa pembaca akan ter ganggu oleh text yang boleh difa hami apabila meli hi at susunan mukasurat.</p>
+        </div>
+        <div class="col-sm-3">
+          <div class="indent30">
+            <h4>Recent News</h4>
+            <ul class="grove-list">
+              <li><a href="#">Hello World Shatana</a></li>
+              <li><a href="#">Foobar in the sky flying so high</a></li>
+              <li><a href="#">Wild things happening, all around</a></li>
+              <li><a href="#">No time for that, no time for that</a></li>
+            </ul>
+          </div>
+        </div>
+                
+        <div class="col-sm-3">
+          <h4>About Grove</h4>
+          <p>Adalah menjadi satu fakta bahawa pembaca akan ter ganggu oleh text yang boleh difa hami apabila meli hi at susunan mukasurat.</p>
+        </div>
+        <div class="col-sm-3">
+          <h4>Connect</h4>
+          <a href="#" class="glyphicons facebook"><i></i></a>
+          <a href="#" class="glyphicons twitter"><i></i></a>
+          <a href="#" class="glyphicons google_plus"><i></i></a>
+          <a href="#" class="glyphicons linked_in"><i></i></a>
+        </div>            
+      </div>
+    </div>
+    <div class="container">
+      <div class="copyright">
+        <p>Template by HackerThemes, 2013 All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+
+  <%= javascript_include_tag "template/bootstrap.min" %>
+  <%= javascript_include_tag "template/modernizr" %>    
 </body>
 </html>

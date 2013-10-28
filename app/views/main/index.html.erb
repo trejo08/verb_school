@@ -1,14 +1,58 @@
+<div class="hidden-xs">
+    <div id="layerslider" style="width: 100%; height: 405px; margin: 0px auto; ">
+      <div class="ls-layer" style="transition2d:5;">
+        <%= image_tag "slides/bg-five.jpg", class: "ls-bg", alt: "Slider Background" %>
+        <%= image_tag "slides/imac.png", class: "ls-s-1", alt: "iMac", style: "top:15px; left:650px; durationin : 1250; durationout : 1250;" %>
+        <div class="ls-s-1 large-caption" style="top:120px; left:20px; delayin : 750; slidedirection : fade; slideoutdirection : fade;">
+          <div><p>Introducing Grove:</p></div>
+          <div><p>A clean, responsive and flexible</p></div>
+          <div>
+            <p>business theme.</p>
+          </div>
+        </div>
+      </div>
+      <div class="ls-layer" style="transition2d:5;">
+        <img class="ls-bg" src="/assets/slides/bg-one.jpg" alt="Slider Background">
+        <img  class="ls-s-1" src="/assets/slides/fam_imac.png" alt="iMac" style="top:50px; left:50px; durationin : 1250; durationout : 1250; delayin : 0;">
+        <img  class="ls-s-1" src="/assets/slides/fam_macbook.png" alt="MacBook" style="top:190px; left:250px; durationin : 1250; durationout : 1250; delayin : 100;">
+        <img  class="ls-s-1" src="/assets/slides/fam_ipad.png" alt="iPad" style="top:210px; left:0px; durationin : 1250; durationout : 1250; delayin : 200;">
+        <img  class="ls-s-1" src="/assets/slides/fam_iphone.png" alt="iPhone" style="top:265px; left:160px; durationin : 1250; durationout : 1250; delayin : 300;">
+        <div class="ls-s-1 large-caption" style="top:130px; left:700px; delayin : 700; slidedirection : fade; slideoutdirection : fade;">
+          <div><p>Layerslider:</p></div>
+          <div><p>Highly configurable,</p></div>
+          <div><p>fexible, responsive and fast</p></div>
+        </div>
+      </div>
+      <div class="ls-layer" style="transition2d:5;">
+        <img class="ls-bg" src="/assets/slides/bg-three.jpg" alt="Slider Background">
+        <img  class="ls-s-1" src="/assets/slides/macbook-air.png" alt="MB Air" style="top:25px; left:50px; durationin : 1250; durationout : 1250;">
+        <div class="ls-s-1 large-caption" style="top:150px; left:750px; delayin : 750; slidedirection : fade; slideoutdirection : fade;">
+          <div><p>Impress your visitors,</p></div>
+          <div><p>and turn them into clients!</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
 
-
-<table>
-	<tr>
-		<center><h1><%= @index_page.title rescue "aqui va el titulo" %></h1></center>
-		<hr>
-		<%= @index_page.description1 rescue "descripcion 1" %>
-		<hr>
-		<%= @index_page.description2 rescue "descripcion 2" %>
-		<hr>
-	</tr>
-</table>
-
+<div class="widewrapper">
+  <div class="container">
+  	<div class="headline top"><%= @index_page.title rescue "aqui va el titulo" %></div>
+    <div class="row features">
+      <div class="col-md-4 feature">
+        <h3><a class="glyphicons tint"><i></i></a>Titulo 1</h3>
+        <p><%= @index_page.description1 rescue "descripcion 1" %></p>
+      </div>
+      <div class="col-md-4 feature">
+        <h3><i class="glyphicons fire"><i></i></i>Titulo 2</h3>
+        <p><%= @index_page.description2 rescue "descripcion 2" %></p>
+      </div>
+      <div class="col-md-4 feature">
+        <h3><i class="glyphicons cloud"><i></i></i>Titulo 3</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo</p>
+      </div>        
+    </div>
+  </div>
+</div>
 
