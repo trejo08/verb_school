@@ -1,20 +1,31 @@
-<div class="page-header">
-	<h1>Estos son los temas que  de todas las unidades de estudio</h1>
+<%= javascript_include_tag "template/faq" %>
+<div class="widewrapper pagetitle">
+  <div class="container">
+    <h1>Estos son los temas que  de todas las unidades de estudio</h1>
+  </div>
 </div>
-<dl class="dl-horizontal">
-	<% @temas.each do |tema|%>
-		<dt>
-			<strong>Unidad</strong>
-		</dt>
-		<dd><%= tema.unit.title %></dd>
-		<dt>
-			<strong>Tema</strong>
-		</dt>
-		<dd><%= tema.title %></dd>
-		<dt>
-			<strong>Estudiar tema</strong>
-		</dt>
-		<dd><%= link_to 'seguir', tema_path(tema) %></dd>
-		<hr>
-	<% end %>
-</dl>
+
+<div class="widewrapper">
+  <div class="container">
+    <div class="row content">
+      <!-- Important note: FAQ needs js/faq.js to work properly -->
+      <section id="faq" class="col-sm-12 faq">
+      	<% @temas.each do |tema| %>
+        <div class="question">
+          <a href="#answer_<%= tema.hash %>" class="faq-toggle" data-toggle="collapse"><strong>Unidad: </strong><%= tema.unit.title %></a>
+          <div id="answer_<%= tema.hash %>" class="collapse">
+            <div class="answer">
+            	<dl class="dl-horizontal">
+            		<dt><strong>Tema: </strong></dt>
+            		<dd><%= tema.title %></dd>
+            		<dt><strong>Estudiar Tema: </strong></dt>
+            		<dd><%= link_to 'seguir', tema_path(tema) %></dd>
+            	</dl>	
+            </div>
+          </div>
+        </div>
+        <% end %>
+      </section>
+    </div>
+  </div>
+</div>  

@@ -1,12 +1,23 @@
-<div class="page-header">
-	<h1><strong>En esta seccion veremos la lista de unidades que estaran disponibles para ser estudiadas</strong></h1> <br>
+<%= javascript_include_tag "template/faq" %>
+<div class="widewrapper pagetitle">
+  <div class="container">
+    <h1>En esta seccion veremos la lista de unidades que estaran disponibles para ser estudiadas</h1>
+  </div>
 </div>
-<dl class="dl-horizontal">
-	<% @units.each do |unit| %>
-		<dt>
-			<strong>Unidad</strong>
-		</dt>
-		<dd><%= unit.title rescue '' %></dd>
-		<hr>
-	<% end %>
-</dl>
+
+
+<div class="widewrapper">
+  <div class="container">
+    <div class="row content">
+      <!-- Important note: FAQ needs js/faq.js to work properly -->
+      <section id="faq" class="col-sm-12 faq">
+      	<% @units.each do |unit| %>
+        <div class="question">
+          <a href="#answer_<%= unit.hash %>" class="faq-toggle" data-toggle="collapse"><strong>Unidad: </strong><%= unit.title %></a>
+        </div>
+        <% end %>
+      </section>
+    </div>
+  </div>
+</div>  
+
